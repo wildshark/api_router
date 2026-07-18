@@ -1,7 +1,3 @@
-Here’s a **full Markdown documentation** for your project, labeled as **ApiGateway v1.0.0**. It covers both the **server side** (multi‑tenant gateway) and the **client side** (PHP cURL consumer).
-
----
-
 # ApiGateway v1.0.0
 
 A **multi‑tenant aware API Gateway** built with PHP and SQLite.  
@@ -136,6 +132,25 @@ echo callApiGateway("/metrics");
   ]
 }
 ```
+
+## 🐳 Docker Deployment
+
+The API Gateway is fully containerized and can be launched instantly using Docker Compose.
+
+### Included Configuration
+- **Dockerfile**: Builds a customized `php:8.2-apache` image, enabling the required `a2enmod rewrite` and `pdo_sqlite` extensions.
+- **Docker-compose.yml**: Orchestrates the container, mapping port `8080` to Apache's `80` and attaching a persistent volume so your `gateway.db` and `.env` files persist across restarts.
+
+### How to Deploy
+1. Open your terminal in the root directory of the project.
+2. Build and start the container in detached mode:
+   ```bash
+   docker compose up -d --build
+   ```
+3. The gateway is now running at `http://localhost:8080/`.
+4. Access the admin dashboard at `http://localhost:8080/admin/index.php`.
+
+**Note:** Any changes made to the source files or SQLite database will automatically sync to the container via the configured local volume mount.
 
 ---
 

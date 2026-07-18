@@ -1,7 +1,3 @@
-Here’s the **Deployment Guide section** you can add to your documentation so that **ApiGateway v1.0.0** is fully production‑ready. It covers Apache, Nginx, `.htaccess` rewrite rules, and VPS setup.
-
----
-
 # 🚀 Deployment Guide (ApiGateway v1.0.0)
 
 This section explains how to deploy the **multi‑tenant ApiGateway v1.0.0** to a production environment, including Apache, Nginx, and VPS hosting.

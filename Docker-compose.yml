@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: .
+    container_name: api_gateway
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - PHP_INI_DIR=/usr/local/etc/php
+    restart: unless-stopped
